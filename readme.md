@@ -13,6 +13,8 @@ This is your playground!
 
 ## How it works
 
-We use hyperHTML to render our layout, more info on how it works here: https://viperhtml.js.org/hyperhtml/documentation/#essentials-01
+- We use `requirejs` to create modules, more info on how it works here: https://requirejs.org/
+- We use `hyperHTML` to render our layout, more info on how it works here: https://viperhtml.js.org/hyperhtml/documentation/#essentials-01
 
-But don't worry, you dont need to be an expert. For now, the only important thing is that you can find the main html of the app in `app.js` file.
+But don't worry, you dont need to be an expert.
+For now, the only important thing is that you can find the main html of the app in `scripts/app.js` file, the code for the custom select component is in `scripts/custom-select.js` and the elements to be used across the app are in `scripts/components.js`
