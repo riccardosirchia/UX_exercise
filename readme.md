@@ -15,4 +15,4 @@ This is your playground!
 
 We use hyperHTML to render our layout, more info on how it works here: https://viperhtml.js.org/hyperhtml/documentation/#essentials-01
 
-But don't worry, you dont need to be an expert. For now, the only important this is that you can find the main html of the app in `app.js` file.
+But don't worry, you dont need to be an expert. For now, the only important thing is that you can find the main html of the app in `app.js` file.
