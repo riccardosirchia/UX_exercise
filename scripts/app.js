@@ -2,13 +2,16 @@ require(['components', 'hyper-html'], function (components, hyperHTML) {
     var win = this;
     let showSelect = true;
     let domains = new Set(['dashboard.sleeknote.com', 'sleeknote.com', 'app.sleeknote.com']);
+    let selectedOption;
 
     render = () => {
+        let options = Array.from(domains).map(domain => ({text: domain, value: domain}))
+
         const customSelect = components.customSelect.render({
             id: 'exampleSelect',
             caption: 'Example Select',
             options: [
-                ...Array.from(domains).map(domain => ({text: domain, value: domain})),
+                ...options,
                 {
                     value: 'add-domain',
                     text: 'Add Domain',
@@ -17,6 +20,7 @@ require(['components', 'hyper-html'], function (components, hyperHTML) {
                         render()
                     },
                 }],
+            selectedOption,
         })
         const inputText = components.input.render({
             id: 'inputDomain',
@@ -43,10 +47,15 @@ require(['components', 'hyper-html'], function (components, hyperHTML) {
             ${cancelButton}
         `
         const element = showSelect ? customSelect : input;
+
         const onsubmit = (event) => {
             event.preventDefault();
             domains.add(event.target.elements.inputDomain.value);
             showSelect = true;
+            selectedOption = {
+                text: event.target.elements.inputDomain.value,
+                value: event.target.elements.inputDomain.value
+            }
             render()
         }
         // main HTML goes here

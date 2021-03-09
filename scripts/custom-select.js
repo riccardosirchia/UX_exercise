@@ -3,8 +3,9 @@ define(['hyper-html'], function (hyperHTML) {
    return class CustomSelect {
         constructor(config) {
             this.isOpen = false;
-            this.selectedOption = {};
+            this.selectedOption = config.selectedOption || { };
             this.config = config;
+
         }
         toggleDropdown() {
             this.isOpen = !this.isOpen;
