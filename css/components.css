@@ -1,4 +1,27 @@
 
+#assignment {
+    width: 50%;
+    margin: auto;
+    padding: 100px;
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.header {
+    font-size: 11px;
+    color: #066756;
+}
+.title {
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 120%;
+}
+
+.description {
+    margin-bottom: 50px;
+}
+
 custom-select {
     display: flex;
     flex-flow: row wrap;

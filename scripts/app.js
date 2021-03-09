@@ -43,10 +43,14 @@ require(['components', 'hyper-html'], function (components, hyperHTML) {
 
         // main HTML goes here
         hyperHTML.bind(win.document.body)`
+            <div id="assignment">
 
-            <h1>Your test project</h1>
+                <h5 class="header">ASSIGNMENT</h5>
+                <h1 class="title">Create the component</h1>
+                <text class="description">We would like you to create the component below with its associated states - immediate and nested.</text>
+                <div>${element}</div>
 
-            <div>${element}</div>
+            </div>
 
     `
     }
