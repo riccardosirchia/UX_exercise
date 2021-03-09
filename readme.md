@@ -1,4 +1,4 @@
-## Sleeknote test
+## Run it
 
 This is a basic example project so you have the structure to start coding, it is a simplification of our real environment.
 To get it running just execute the following command in the root of the project.

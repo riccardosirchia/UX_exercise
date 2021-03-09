@@ -52,3 +52,7 @@ select-options button:active {
     background: none;
     outline: none;
 }
+
+input:invalid {
+    border-color: red;
+}
