@@ -7,7 +7,7 @@ To get it running just execute the following command in the root of the project.
 
 now you can navigate to http://localhost:8000/ to test your code.
 
-Feel free to add/remove/modify the files in here.
+Feel free to add/remove/modify the files in your fork
 
 This is your playground!
 
