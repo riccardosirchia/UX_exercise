@@ -1,3 +1,13 @@
+## The test
+Fork this repo.
+Running the project you will se a dropdown.
+Implement the styling and functionality shown here: 
+https://www.figma.com/file/dwg4a7Irf2sctF3XP8u41a/UX-developer---Assignment?node-id=0%3A1
+It's a dropdown where you can choose from a selection of domains.
+It also have the option for the user to add a new domain that is not already on the list.
+Pressing the "+ Add new domain" transforms the dropdown to a input field.
+Remember to consider validation and invalid state.
+
 ## Run it
 
 This is a basic example project so you have the structure to start coding, it is a simplification of our real environment.
