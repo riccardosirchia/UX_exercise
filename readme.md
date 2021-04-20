@@ -1,7 +1,7 @@
 ## The test
 Fork this repo.
 
-Running the project you will se a dropdown.
+Running the project you will ses a dropdown.
 
 Implement the styling and functionality shown here: 
 
