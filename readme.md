@@ -1,4 +1,4 @@
-## The test
+## The Exercise
 Fork this repo.
 
 Running the project you will see a dropdown.
@@ -23,7 +23,7 @@ To get it running just execute the following command in the root of the project.
 
 `python -m SimpleHTTPServer 8000`
 
-now you can navigate to http://localhost:8000/ to test your code.
+now you can navigate to http://localhost:8000/ to run your code.
 
 Feel free to add/remove/modify the files in your fork
 
