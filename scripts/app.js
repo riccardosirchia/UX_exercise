@@ -4,6 +4,10 @@ require(['components', 'hyper-html'], function (components, hyperHTML) {
     let domains = new Set(['dashboard.sleeknote.com', 'sleeknote.com', 'app.sleeknote.com']);
     let selectedOption;
 
+    function addClass() {
+        floatContainer.classList.add('active');
+    }
+
     render = () => {
         let options = Array.from(domains).map(domain => ({text: domain, value: domain}))
 
@@ -13,7 +17,7 @@ require(['components', 'hyper-html'], function (components, hyperHTML) {
             options: [
                 ...options,
                 {
-                    value: 'add-domain',
+                    value: 'add-button',
                     text: 'Add Domain',
                     action: () => {
                         showSelect = false
@@ -24,9 +28,13 @@ require(['components', 'hyper-html'], function (components, hyperHTML) {
         })
         const inputText = components.input.render({
             id: 'inputDomain',
+            placeholder: 'https://www.domain.com',
             type: 'text',
             pattern: '^((?:https?:\\/\\/)?[^./]+(?:\\.[^./]+)+(?:\\/.*)?)$',
             title: 'Please enter a valid domain',
+            onclick: () => {
+                addClass()
+            }
         })
         const addButton = components.button.render({
             id: 'addButton',
@@ -43,8 +51,10 @@ require(['components', 'hyper-html'], function (components, hyperHTML) {
         })
         const input = hyperHTML.wire()`
             ${inputText}
-            ${addButton}
-            ${cancelButton}
+            <div class="input-action-container">
+                ${addButton}
+                ${cancelButton}
+            </div>
         `
         const element = showSelect ? customSelect : input;
 
@@ -61,13 +71,14 @@ require(['components', 'hyper-html'], function (components, hyperHTML) {
         // main HTML goes here
         hyperHTML.bind(win.document.body)`
             <div id="assignment">
-                <h5 class="header">ASSIGNMENT</h5>
-                <h1 class="title">Create the component</h1>
-                <text class="description">We would like you to create the component below with its associated states - immediate and nested.</text>
-                <div>${element}</div>
-                <form onsubmit=${onsubmit} id=form hidden />
+                <div class="form-layout">
+                    <h5 class="header upper">Assignment</h5>
+                    <h1 class="title">Create the component</h1>
+                    <text class="description">We would like you to create the component below with its associated states - immediate and nested.</text>
+                    <div>${element}</div>
+                    <form onsubmit=${onsubmit} id=form hidden />
+                </div>
             </div>
-
     `
     }
     render();

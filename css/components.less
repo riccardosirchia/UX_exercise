@@ -1,0 +1,170 @@
+// out: components.css
+
+@import "mixins.less";
+@import "fonts.less";
+
+@FontFamily: "Sailec", "Arial", Helvetica, sans-serif;
+@FontFamily2: "Lato", "Arial", Helvetica, sans-serif;
+
+@PrimaryColor: #6A799F;
+@SuccessColor: #066756;
+@ErrorColor: #DE3053;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#assignment {
+    .flex-display();
+    .align-items(center);
+    .justify-content(center);
+    min-height: 100vh;
+}
+
+.form-layout {
+    position: relative;
+    margin: 0 auto;
+    padding: 30px;
+    .flex-display();
+    .flex-wrap(wrap);
+    box-sizing: border-box;
+    max-width: 512px;
+    font-family: @FontFamily2;
+    > * {
+        width: 100%;
+    }
+}
+.header {
+    font-size: 11px;
+    font-weight: 500;
+    display: inline-block;
+    color: @SuccessColor;
+    font-family: @FontFamily;
+    margin-bottom: 8px;
+}
+.title {
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 40px;
+    font-family: @FontFamily;
+}
+.description {
+    margin: 12px 0 41px 0;
+    line-height: 25px
+}
+.upper {
+    text-transform: uppercase;
+}
+#custom-select-label {
+    color: @PrimaryColor;
+}
+.input-action-container {
+    .flex-display();
+    .justify-content(flex-end);
+}
+.input-action {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 10px;
+    font-weight: bold;
+}
+#addButton {
+    color: @SuccessColor;
+}
+#cancelButton {
+    color: @ErrorColor;    
+}
+custom-select { 
+    .flex-display();
+    width: 100%;
+    position: relative;
+    custom-select-input {
+        .flex-display();
+        .justify-content(space-between);
+        .align-content(center);
+        border: 1px solid @PrimaryColor;
+        border-radius: 4px;
+        padding: 14px 16px;
+        width: 100%;
+    }
+}
+select-options {
+    position: absolute;
+    top: calc(100% + 8px);
+    width: 100%;
+    box-sizing: border-box;
+    opacity: 0;
+    display: flex;
+    flex-flow: column wrap;
+    background-color: #fff;
+    box-shadow: 0px 1.1px 1.7px rgba(14, 25, 57, 0.016), 0px 3.8px 5.8px rgba(14, 25, 57, 0.024), 0px 16px 24px rgba(14, 25, 57, 0.04);
+    border: 1px solid fade(@PrimaryColor, 30%);
+    border-radius: 4px;
+    text-align: left;
+    font-size: 16px;
+    line-height: 16px;
+    font-family: @FontFamily;
+    option {
+        padding: 8px 21px;
+        &:first-child {
+            padding: 18px 21px 8px 21px;
+        }
+    }
+    &.open {
+        opacity: 1;
+        width: 100%;
+        color: #09112B;
+    }
+}
+#add-button {
+    border-top: 1px solid fade(@PrimaryColor, 30%);
+    margin-top: 10px;
+    padding: 16px 21px;
+    display: inline-flex;
+    &::before{
+        content: '+';
+        font-size: 25px;
+        margin-right: 10px;
+        line-height: 18px;
+    }
+}
+.input-field {
+    border: 1px solid fade(@PrimaryColor, 30%);
+    border-radius: 4px;
+    padding: 14px 16px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none !important;
+    height: 50px;
+}
+select-options button,
+select-options button:focus,
+select-options button:active {
+    border: none;
+    background: none;
+    outline: none;
+}
+input:invalid {
+    border-color: @ErrorColor;
+}
+.float-container {
+    width: 100%;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    .label {
+        position: absolute;
+        font-size: 15px;
+        left: 17px;
+        top: 14px;
+        color: @PrimaryColor;
+    }
+    &.active {
+        label {
+            transition: all 0.3s ease-in-out;
+            transform: translate(-29px, -13px) scale(0.65);
+            color: @PrimaryColor;
+        }
+      }
+  }
